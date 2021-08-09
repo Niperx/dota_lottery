@@ -36,8 +36,9 @@ print(match)
 response1 = requests.get(url + str(match), headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'})
 soup1 = BeautifulSoup(response1.text, 'lxml')
 
-items_list = []
+hero_info_list = {}
 for hero in soup1.find_all('tr', class_='col-hints'):
+	items_list = {}
 	current_hero = hero.find('div', class_='image-container image-container-hero image-container-icon image-container-overlay')
 	if current_hero != None:
 
@@ -50,7 +51,8 @@ for hero in soup1.find_all('tr', class_='col-hints'):
 		print('Иконка героя: ' + hero_img + '\n') # Иконка героя
 
 		hero_items = hero.find('div', class_='player-inventory-items')
-		# print(hero_items)
+
+		items_list.update({'hero_icon' : hero_img})
 
 		i = 1
 		for item in hero_items.find_all('div', class_='match-item-with-time'):
@@ -61,18 +63,26 @@ for hero in soup1.find_all('tr', class_='col-hints'):
 				print('Предмет #'+str(i)+': ' + item_name) # Название предмета
 
 				item_img = main + item.find('img', src=True)['src']
-				items_list.append(item_name)
+
 				print('Иконка предмета: ' + item_img) # Иконка предмета
-				i+=1
+
+
+				items_list.update({item_name : item_img})
+				
+				i += 1
 			except:
 				continue
+
+
+		print(items_list)
+		hero_info_list.update({hero_name : items_list})
 
 		print('\n\n\n\n\n')
 
 
 
 with open("test.json", 'w', encoding='utf-8') as write_message:
-	json.dump(items_list, write_message, ensure_ascii=False, indent=4)
+	json.dump(hero_info_list, write_message, ensure_ascii=False, indent=4)
 
 # with open(core_way + "message" + str(call.from_user.id) +".json", 'r', encoding='utf-8') as read_message:
 # 	message = json.load(read_message)
