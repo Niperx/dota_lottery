@@ -5,19 +5,15 @@ import random
 import json
 
 main = 'https://ru.dotabuff.com'
+url1 = 'https://ru.dotabuff.com/matches?game_mode=single_draft&skill_bracket=normal_skill'
 url = 'https://ru.dotabuff.com/matches/'
 
 def get_match_info():
 
 	# ВЗЯТЬ СЛУЧАЙНЫЙ МАТЧ
 
-	response = requests.get(url, headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'})
+	response = requests.get(url1, headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'})
 	soup = BeautifulSoup(response.text, 'html.parser')
-	# quotes = soup.find_all('tr')
-
-	# for n in en
-	# # print(quotes)
-
 	# print(soup)
 	matches = []
 	for el in soup.select('tr'):
@@ -37,8 +33,8 @@ def get_match_info():
 
 	response1 = requests.get(url + str(match), headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'})
 	soup1 = BeautifulSoup(response1.text, 'lxml')
-
 	hero_info_list = {}
+	print(soup1)
 	for hero in soup1.find_all('tr', class_='col-hints'):
 
 		items_list = []
@@ -48,10 +44,10 @@ def get_match_info():
 			hero_info = current_hero.find('a', href=True)['href']
 			hero_name = hero_info[hero_info.rfind('/')+1:]
 			hero_name = hero_name.replace('-', ' ')
-			print('Герой: ' + hero_name) # Название героя
+			# print('Герой: ' + hero_name) # Название героя
 
 			hero_img = main + current_hero.find('img', src=True)['src']
-			print('Иконка героя: ' + hero_img + '\n') # Иконка героя
+			# print('Иконка героя: ' + hero_img + '\n') # Иконка героя
 
 			hero_items = hero.find('div', class_='player-inventory-items')
 
@@ -63,11 +59,11 @@ def get_match_info():
 					item_info = item.find('a', href=True)['href']
 					item_name = item_info[item_info.rfind('/')+1:]
 					item_name = item_name.replace('-', ' ')
-					print('Предмет #'+str(i)+': ' + item_name) # Название предмета
+					# print('Предмет #'+str(i)+': ' + item_name) # Название предмета
 
 					item_img = main + item.find('img', src=True)['src']
 
-					print('Иконка предмета: ' + item_img) # Иконка предмета
+					# print('Иконка предмета: ' + item_img) # Иконка предмета
 
 
 					items_list.append(item_img)
@@ -78,34 +74,28 @@ def get_match_info():
 
 			hero_info_list.update({hero_name : items_list})
 
-			print('\n\n\n\n\n')
+
 
 
 
 	with open("match.json", 'w', encoding='utf-8') as write_message:
 		json.dump(hero_info_list, write_message, ensure_ascii=False, indent=4)
 
-# with open(core_way + "message" + str(call.from_user.id) +".json", 'r', encoding='utf-8') as read_message:
-# 	message = json.load(read_message)
-user_id = 201044121
+# get_match_info()
+# from settings import *
+# import vk_api
 
-with open("stats.json", 'r', encoding='utf-8') as read_message:
-	msg = json.load(read_message)
+# vk_session = vk_api.VkApi(token=token)
 
-check = 0
-for player in msg.keys():
-	if player == user_id:
-		check = 2
-	else:
-		check = 1
+# session_api = vk_session.get_api()
 
-if check == 1:
-	msg.update({user_id : 1})
-elif check == 2:
-	msg[user_id] += 1
-	# popit = msg.pop(user_id)
-	# print(popit)
-	# msg.update({user_id : popit+1})
+# delete_messages = [2866418, 2866419, 2866420]
 
-with open("stats.json", 'w', encoding='utf-8') as write_message:
-	json.dump(msg, write_message, ensure_ascii=False, indent=4)
+# for msg in delete_messages:
+# 	vk_session.method('messages.delete',
+# 		{
+# 		'message_ids': msg,
+# 		'delete_for_all': 1,
+# 		'chat_id': 10
+# 		}
+# 	)

@@ -4,18 +4,13 @@ from vk_api.upload import VkUpload
 from vk_api.utils import get_random_id
 from vk_api.longpoll import VkLongPoll, VkEventType
 
-import math
-import os.path
 import json
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import time
-import sqlite3
-import threading
 import random
 from PIL import Image, ImageDraw, ImageFont
-import io
 from urllib.request import urlopen
 #pip install Pillow
 
@@ -36,6 +31,15 @@ def send_user(user, msg, attachment=''):
 		'message': msg,
 		'random_id': 0,
 		'attachment': attachment
+		}
+	)
+
+def delete_message_chat(chat_id, message_id):
+	vk_session.method('messages.delete',
+		{
+		'message_ids': message_id,
+		'delete_for_all': 1,
+		'chat_id': chat_id
 		}
 	)
 
@@ -163,21 +167,30 @@ def create_test():
 	send_chat(10, 'Угадайте героя по билду', x1)
 	send_chat(10, '', x2)
 
+delete_messages = []
 
 for event in longpoll.listen():
-	if event.type == VkEventType.MESSAGE_NEW and event.to_me and event.text:
+	# if event.type == VkEventType.MESSAGE_NEW and event.to_me and event.text:
+	if event.type == VkEventType.MESSAGE_NEW and event.text:
 		print('\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/')
 		print('Сообщение пришло в: ' + str(datetime.strftime(datetime.now(), "%H:%M:%S")))
 		print('Текст сообщения: ' + str(event.text))
 		print('ID пользователя: ' + str(event.user_id))
 		print('===========================================')
 
-		if event.from_chat and not (event.from_me):
+		if event.from_chat:
 			response = event.text.lower()
 			text = ''
 			fullname = get_user_name(event.user_id)
 			print('Кто: '+fullname[0]+' '+fullname[1])
 			print('Номер сообщения: '+str(event.message_id))
+
+			if 'это правильный ответ!' in response:
+				delete_messages.append(event.message_id)
+
+			if 'угадайте героя по билду' in response:
+				delete_messages.append(event.message_id)
+				delete_messages.append(event.message_id + 1)
 
 			if response == 'мем' and event.user_id == 201044121:
 
@@ -188,56 +201,78 @@ for event in longpoll.listen():
 				message = json.load(read_message)
 
 			if response == message[0]:
+				delete_messages.append(event.message_id)
 				# Человек получает поинты
 				with open("stats.json", 'r', encoding='utf-8') as read_message:
 					msg = json.load(read_message)
 
-				check = 0
-				for player in msg.keys():
-					if player == event.user_id:
-						check = 2
-					else:
-						check = 1
+				user_id = str(event.user_id)
+				player = msg.get(user_id)
+				if player != None:
+					msg.update({user_id : player + 1})
+				else:
+					msg.update({user_id : 1})
 
-				if check == 1:
-					msg.update({event.user_id : 1})
-				elif check == 2:
-					popit = msg.pop(event.user_id)
-					print(popit)
-					msg.update({event.user_id : popit+1})
+				lead_text = "⭐️ ТОП знатоков ⭐️️ \n\n"
+				k = {k: v for k, v in sorted(msg.items(), key=lambda item: item[1], reverse=True)}
+				y = 1
+				for key in k:
+					if y == 1:
+						smile = "🥇"
+					elif y == 2:
+						smile = "🥈"
+					elif y == 3:
+						smile = "🥉"
+					else:
+						smile = "🎗"
+					fullname = get_user_name(key)
+					lead_text += smile + " " + str(y) + ". " + fullname[0]+' '+fullname[1] + " - " + str(k[key]) + " points. " + smile + "\n"
+					y += 1
+
+				text = 'Это правильный ответ!\n\n ' + lead_text + '\n\nОжидайте следующий билд...'
+				print(text)
+
+				send_chat_reply(10, text, event.message_id)
 
 				with open("stats.json", 'w', encoding='utf-8') as write_message:
 					json.dump(msg, write_message, ensure_ascii=False, indent=4)
 
-				text = 'Это правильный ответ!\nОжидайте следующий билд...'
-				send_chat_reply(10, text, event.message_id)
-
+				time.sleep(60)
 				get_match_info()
-				time.sleep(35)
 				create_test()
+
+				for msg in delete_messages:
+					try:
+						delete_message_chat(10, msg)
+					except vk_api.exceptions.ApiError:
+						continue
+
+				delete_messages = []
+
+
 				
 
-		if event.from_user and not (event.from_me):
-			response = event.text.lower()
-			text = ''
-			fullname = get_user_name(event.user_id)
-			print('Кто: '+fullname[0]+' '+fullname[1])
-			print('Номер сообщения: '+str(event.message_id))
+		# if event.from_user and not (event.from_me):
+		# 	response = event.text.lower()
+		# 	text = ''
+		# 	fullname = get_user_name(event.user_id)
+		# 	print('Кто: '+fullname[0]+' '+fullname[1])
+		# 	print('Номер сообщения: '+str(event.message_id))
 
-			if response == 'мем' and event.user_id == 201044121:
+		# 	if response == 'мем' and event.user_id == 201044121:
 
-				create_test(event.user_id)
+		# 		create_test(event.user_id)
 
 
-			with open("result.json", 'r', encoding='utf-8') as read_message:
-				message = json.load(read_message)
+		# 	with open("result.json", 'r', encoding='utf-8') as read_message:
+		# 		message = json.load(read_message)
 
-			if response == message[0]:
-				# Человек получает поинты
-				text = 'Это правильный ответ!\nОжидайте следующий билд...'
-				send_user_reply(event.user_id, text, event.message_id)
+		# 	if response == message[0]:
+		# 		# Человек получает поинты
+		# 		text = 'Это правильный ответ!\nОжидайте следующий билд...'
+		# 		send_user_reply(event.user_id, text, event.message_id)
 
-				get_match_info()
-				create_test(event.user_id)
+		# 		get_match_info()
+		# 		create_test(event.user_id)
 
-				time.sleep(35)
+		# 		time.sleep(35)
