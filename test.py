@@ -34,7 +34,7 @@ def get_match_info():
 	response1 = requests.get(url + str(match), headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'})
 	soup1 = BeautifulSoup(response1.text, 'lxml')
 	hero_info_list = {}
-	print(soup1)
+	# print(soup1)
 	for hero in soup1.find_all('tr', class_='col-hints'):
 
 		items_list = []

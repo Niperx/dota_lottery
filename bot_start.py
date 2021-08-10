@@ -167,6 +167,11 @@ def create_test():
 	send_chat(10, 'Угадайте героя по билду', x1)
 	send_chat(10, '', x2)
 
+
+with open("result.json", 'r', encoding='utf-8') as read_message:
+	heroes = json.load(read_message)
+
+
 delete_messages = []
 
 for event in longpoll.listen():
@@ -237,7 +242,7 @@ for event in longpoll.listen():
 				with open("stats.json", 'w', encoding='utf-8') as write_message:
 					json.dump(msg, write_message, ensure_ascii=False, indent=4)
 
-				time.sleep(60)
+				time.sleep(20)
 				get_match_info()
 				create_test()
 
@@ -248,6 +253,21 @@ for event in longpoll.listen():
 						continue
 
 				delete_messages = []
+			heroes1 = heroes.remove(message[0].title())
+			for name in heroes1:
+				if response == name.lower():
+					with open("stats.json", 'r', encoding='utf-8') as read_message:
+						msg = json.load(read_message)
+
+					user_id = str(event.user_id)
+					player = msg.get(user_id)
+					if player != None:
+						msg.update({user_id : player - 1})
+					else:
+						msg.update({user_id : 0})
+
+					with open("stats.json", 'w', encoding='utf-8') as write_message:
+						json.dump(msg, write_message, ensure_ascii=False, indent=4)
 
 
 				
