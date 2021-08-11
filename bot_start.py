@@ -168,108 +168,127 @@ def create_test():
 	send_chat(10, '', x2)
 
 
-with open("result.json", 'r', encoding='utf-8') as read_message:
+with open("heroes.json", 'r', encoding='utf-8') as read_message:
 	heroes = json.load(read_message)
-
 
 delete_messages = []
 
-for event in longpoll.listen():
-	# if event.type == VkEventType.MESSAGE_NEW and event.to_me and event.text:
-	if event.type == VkEventType.MESSAGE_NEW and event.text:
-		print('\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/')
-		print('Сообщение пришло в: ' + str(datetime.strftime(datetime.now(), "%H:%M:%S")))
-		print('Текст сообщения: ' + str(event.text))
-		print('ID пользователя: ' + str(event.user_id))
-		print('===========================================')
+while True:
+	try:
+		for event in longpoll.listen():
+			# if event.type == VkEventType.MESSAGE_NEW and event.to_me and event.text:
+			if event.type == VkEventType.MESSAGE_NEW and event.text:
+				print('\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/')
+				print('Сообщение пришло в: ' + str(datetime.strftime(datetime.now(), "%H:%M:%S")))
+				print('Текст сообщения: ' + str(event.text))
+				print('ID пользователя: ' + str(event.user_id))
+				print('===========================================')
 
-		if event.from_chat:
-			response = event.text.lower()
-			text = ''
-			fullname = get_user_name(event.user_id)
-			print('Кто: '+fullname[0]+' '+fullname[1])
-			print('Номер сообщения: '+str(event.message_id))
+				if event.from_chat:
+					response = event.text.lower()
+					text = ''
+					fullname = get_user_name(event.user_id)
+					print('Кто: '+fullname[0]+' '+fullname[1])
+					print('Номер сообщения: '+str(event.message_id))
 
-			if 'это правильный ответ!' in response:
-				delete_messages.append(event.message_id)
+					if 'это правильный ответ!' in response:
+						delete_messages.append(event.message_id)
 
-			if 'угадайте героя по билду' in response:
-				delete_messages.append(event.message_id)
-				delete_messages.append(event.message_id + 1)
+					if 'угадайте героя по билду' in response:
+						delete_messages.append(event.message_id)
+						delete_messages.append(event.message_id + 1)
 
-			if response == 'мем' and event.user_id == 201044121:
+					if 'минус бал тебе в ебало, лошара' in response:
+						delete_messages.append(event.message_id)
 
-				create_test()
+					if response == 'мем' and event.user_id == 201044121:
 
+						create_test()
 
-			with open("result.json", 'r', encoding='utf-8') as read_message:
-				message = json.load(read_message)
+					if response == '!shop' and event.user_id == 201044121:
 
-			if response == message[0]:
-				delete_messages.append(event.message_id)
-				# Человек получает поинты
-				with open("stats.json", 'r', encoding='utf-8') as read_message:
-					msg = json.load(read_message)
+						text = 'Пнуть по ебалу участника беседы - 2000 поинтов\nЗамутить участника беседы на 2 часа - 4000 поинтов\nКикнуть участника беседы нахуй отсюда - 10000 поинтов'
+						send_chat_reply(10, text, event.message_id)
+						delete_messages.append(event.message_id)
 
-				user_id = str(event.user_id)
-				player = msg.get(user_id)
-				if player != None:
-					msg.update({user_id : player + 1})
-				else:
-					msg.update({user_id : 1})
+					with open("heroes.json", 'r', encoding='utf-8') as read_message:
+						heroes = json.load(read_message)
 
-				lead_text = "⭐️ ТОП знатоков ⭐️️ \n\n"
-				k = {k: v for k, v in sorted(msg.items(), key=lambda item: item[1], reverse=True)}
-				y = 1
-				for key in k:
-					if y == 1:
-						smile = "🥇"
-					elif y == 2:
-						smile = "🥈"
-					elif y == 3:
-						smile = "🥉"
-					else:
-						smile = "🎗"
-					fullname = get_user_name(key)
-					lead_text += smile + " " + str(y) + ". " + fullname[0]+' '+fullname[1] + " - " + str(k[key]) + " points. " + smile + "\n"
-					y += 1
+					with open("result.json", 'r', encoding='utf-8') as read_message:
+						message = json.load(read_message)
 
-				text = 'Это правильный ответ!\n\n ' + lead_text + '\n\nОжидайте следующий билд...'
-				print(text)
+					if response == message[0]:
+						delete_messages.append(event.message_id)
+						# Человек получает поинты
+						with open("stats.json", 'r', encoding='utf-8') as read_message:
+							msg = json.load(read_message)
 
-				send_chat_reply(10, text, event.message_id)
+						user_id = str(event.user_id)
+						player = msg.get(user_id)
+						if player != None:
+							msg.update({user_id : player + 1})
+						else:
+							msg.update({user_id : 1})
 
-				with open("stats.json", 'w', encoding='utf-8') as write_message:
-					json.dump(msg, write_message, ensure_ascii=False, indent=4)
+						lead_text = "⭐️ ТОП знатоков ⭐️️ \n\n"
+						k = {k: v for k, v in sorted(msg.items(), key=lambda item: item[1], reverse=True)}
+						y = 1
+						for key in k:
+							if y == 1:
+								smile = "🥇"
+							elif y == 2:
+								smile = "🥈"
+							elif y == 3:
+								smile = "🥉"
+							else:
+								smile = "🎗"
+							fullname = get_user_name(key)
+							lead_text += smile + " " + str(y) + ". " + fullname[0]+' '+fullname[1] + " - " + str(k[key]) + " points. " + smile + "\n"
+							y += 1
 
-				time.sleep(20)
-				get_match_info()
-				create_test()
+						text = 'Это правильный ответ!\n\n ' + lead_text + '\n\nМагазин открывается с 1000 поинтов.\n\nОжидайте следующий билд...'
+						print(text)
 
-				for msg in delete_messages:
-					try:
-						delete_message_chat(10, msg)
-					except vk_api.exceptions.ApiError:
-						continue
+						send_chat_reply(10, text, event.message_id)
 
-				delete_messages = []
-			heroes1 = heroes.remove(message[0].title())
-			for name in heroes1:
-				if response == name.lower():
-					with open("stats.json", 'r', encoding='utf-8') as read_message:
-						msg = json.load(read_message)
+						with open("stats.json", 'w', encoding='utf-8') as write_message:
+							json.dump(msg, write_message, ensure_ascii=False, indent=4)
 
-					user_id = str(event.user_id)
-					player = msg.get(user_id)
-					if player != None:
-						msg.update({user_id : player - 1})
-					else:
-						msg.update({user_id : 0})
+						time.sleep(120)
+						get_match_info()
+						create_test()
 
-					with open("stats.json", 'w', encoding='utf-8') as write_message:
-						json.dump(msg, write_message, ensure_ascii=False, indent=4)
+						for msg in delete_messages:
+							try:
+								delete_message_chat(10, msg)
+							except vk_api.exceptions.ApiError:
+								continue
+
+						delete_messages = []
 
 
+					heroes.remove(message[0])
+					for name in heroes:
+						if response == name:
+							with open("stats.json", 'r', encoding='utf-8') as read_message:
+								msg = json.load(read_message)
+
+							user_id = str(event.user_id)
+							player = msg.get(user_id)
+							if player != None:
+								msg.update({user_id : player - 3})
+								text = 'Минус бал тебе в ебало, лошара'
+								send_chat_reply(10, text, event.message_id)
+								delete_messages.append(event.message_id)
+							else:
+								msg.update({user_id : 0})
+
+							with open("stats.json", 'w', encoding='utf-8') as write_message:
+								json.dump(msg, write_message, ensure_ascii=False, indent=4)
+
+	except requests.exceptions.ReadTimeout:
+		print("\n Переподключение к серверам ВК \n")
+		time.sleep(3)
 				
 
 		# if event.from_user and not (event.from_me):
