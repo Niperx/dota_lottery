@@ -1,91 +1,89 @@
 {
-    "pudge": [
-        "https://ru.dotabuff.com/assets/heroes/pudge-c0a4fce1b8a478ae8da6d61b8d514d070dc58b179abf8eee78f1ff217d14e46c.jpg",
-        "https://ru.dotabuff.com/assets/items/urn-of-shadows-53899a823610a35d10c0e6ac103afac1eff22d48851a0ca637a993ee0ad91cc7.jpg",
-        "https://ru.dotabuff.com/assets/items/holy-locket-0cf4fe3783f516afd63356d4e6171024e043026378b82b50dbbe3fde48852b84.jpg",
-        "https://ru.dotabuff.com/assets/items/pipe-of-insight-1feb05f08de2abea881df1fc9601a029acf2dc570e26049fe414ce54e54cda4e.jpg",
-        "https://ru.dotabuff.com/assets/items/lotus-orb-c5d667979d4c2cbe1aff02bbd227786c89dea9f131aa9d4393d87dd2f85b7292.jpg",
-        "https://ru.dotabuff.com/assets/items/radiance-d8059134d09f9a7a3e25c7fb01311728b709f1f8858d93c485c830727b488c5d.jpg",
-        "https://ru.dotabuff.com/assets/items/boots-of-speed-54621603765d852780eee062e7ef665f196fe11fe49225f404dbf22ee0920532.jpg"
-    ],
-    "enchantress": [
-        "https://ru.dotabuff.com/assets/heroes/enchantress-77ddddbbe730568c506af48adb29a1c3e96c315114ad504b726d1ad55050dc37.jpg",
-        "https://ru.dotabuff.com/assets/items/hurricane-pike-23fe62cd6b477b1eaad042d0c28e4af4e3cd695b81f1cc048625a3c2d78ee0c5.jpg",
-        "https://ru.dotabuff.com/assets/items/power-treads-b8799ce5df9966df861ae54f18e5b7044a0ce9fb5a0bf7778e0ae5c4b2dbccf7.jpg",
-        "https://ru.dotabuff.com/assets/items/scythe-of-vyse-7acddec6186e80029f0bc0c6aabec6d0d87969ae525ba02e6cc51911079ba62e.jpg",
+    "silencer": [
+        "https://ru.dotabuff.com/assets/heroes/silencer-c084a012ecca50c7365ed68ec9acff00b3ca69acafb8770ea27df2bb732dd1c2.jpg",
+        "https://ru.dotabuff.com/assets/items/satanic-66ae6b1f6935d9c2db28c70128aa7e88bbe4f80954c750fbff1057df9079d76b.jpg",
         "https://ru.dotabuff.com/assets/items/black-king-bar-53cc00e26c7f84c5c94883ea1af33143a437391d71e0983f97e6310684d2c0a5.jpg",
-        "https://ru.dotabuff.com/assets/items/monkey-king-bar-4fe50b583da3993bb5a11da6a98987b73fc37b9109e9c114024500fd2fc9d7c3.jpg",
-        "https://ru.dotabuff.com/assets/items/eye-of-skadi-8ed7e0eb3584692e96fd4daf5695070e8caab6aeaf4792930e547c5f46853482.jpg"
-    ],
-    "keeper of the light": [
-        "https://ru.dotabuff.com/assets/heroes/keeper-of-the-light-bff8682d78c6f38ac76f831a66c6c705a1d6a532c916d797d626cbeff16a229e.jpg",
-        "https://ru.dotabuff.com/assets/items/pipe-of-insight-1feb05f08de2abea881df1fc9601a029acf2dc570e26049fe414ce54e54cda4e.jpg",
-        "https://ru.dotabuff.com/assets/items/aghanims-scepter-16d3a4d0e09bcde9dadde721b0942ba97b00c060d1bca544e368f8007cba6646.jpg",
-        "https://ru.dotabuff.com/assets/items/gem-of-true-sight-608edc29da6c91b70b187a2b07357138f0c3b601263b0a0ff6b2f2a8c426581b.jpg",
-        "https://ru.dotabuff.com/assets/items/boots-of-speed-54621603765d852780eee062e7ef665f196fe11fe49225f404dbf22ee0920532.jpg",
-        "https://ru.dotabuff.com/assets/items/aether-lens-15b26a22fb71575f1659a2965fd7ab04844a2404b2629893d9c843b7dd46ff60.jpg",
-        "https://ru.dotabuff.com/assets/items/sentry-ward-5017b4c10ebfec90d5709db6a98128c40da8c29ab7be793697ea491cfa2b84c4.jpg"
-    ],
-    "chaos knight": [
-        "https://ru.dotabuff.com/assets/heroes/chaos-knight-fd9f9425a71f62912ab1ef73b217734f68d434744628feb57353f67686dc96f9.jpg",
-        "https://ru.dotabuff.com/assets/items/blink-dagger-449f74da203ae597649ab49d4197f03854ecb88a39da13313449affac98dd8f6.jpg",
-        "https://ru.dotabuff.com/assets/items/blade-mail-1f51a7490785400d1e9848b5890956adb717218eae81602ea410931c0af21df5.jpg",
-        "https://ru.dotabuff.com/assets/items/pipe-of-insight-1feb05f08de2abea881df1fc9601a029acf2dc570e26049fe414ce54e54cda4e.jpg",
-        "https://ru.dotabuff.com/assets/items/vanguard-7037ee4a436b89ddc4421a3bb64ca494f35f3080bf790fb90ba2b45aee73569c.jpg",
-        "https://ru.dotabuff.com/assets/items/heart-of-tarrasque-0d474b6da9f169851768f2a01e4e9882ba21f3cf02ae5b0c768d6488e80fe8e2.jpg",
-        "https://ru.dotabuff.com/assets/items/power-treads-b8799ce5df9966df861ae54f18e5b7044a0ce9fb5a0bf7778e0ae5c4b2dbccf7.jpg"
-    ],
-    "lina": [
-        "https://ru.dotabuff.com/assets/heroes/lina-ffb7bc7093ff3afcb2b0eb57735372bd05526c1660439d5b6a72d4a0ce945a82.jpg",
-        "https://ru.dotabuff.com/assets/items/aghanims-scepter-16d3a4d0e09bcde9dadde721b0942ba97b00c060d1bca544e368f8007cba6646.jpg",
-        "https://ru.dotabuff.com/assets/items/heart-of-tarrasque-0d474b6da9f169851768f2a01e4e9882ba21f3cf02ae5b0c768d6488e80fe8e2.jpg",
+        "https://ru.dotabuff.com/assets/items/witch-blade-496d512a376bbf6d0a388830b575fbd8602fb10f9a9f0aed98192070ad52b141.jpg",
+        "https://ru.dotabuff.com/assets/items/power-treads-b8799ce5df9966df861ae54f18e5b7044a0ce9fb5a0bf7778e0ae5c4b2dbccf7.jpg",
         "https://ru.dotabuff.com/assets/items/eye-of-skadi-8ed7e0eb3584692e96fd4daf5695070e8caab6aeaf4792930e547c5f46853482.jpg",
-        "https://ru.dotabuff.com/assets/items/boots-of-travel-f8de4cb0e5f64b22527fd9b779b8a0ade80c3f079c87c2438d98668ad429e55c.jpg",
-        "https://ru.dotabuff.com/assets/items/hurricane-pike-23fe62cd6b477b1eaad042d0c28e4af4e3cd695b81f1cc048625a3c2d78ee0c5.jpg",
-        "https://ru.dotabuff.com/assets/items/manta-style-0443a64faf59668fd66f24e863fe51f4340d3c6437ff5dfd7890f55136507a01.jpg"
+        "https://ru.dotabuff.com/assets/items/moon-shard-49edadf54cb35a0600977b7b3602a2135d422f298c315f01807cbcf327f21979.jpg"
     ],
-    "axe": [
-        "https://ru.dotabuff.com/assets/heroes/axe-51a0f20720c43228ec5e3911ca7973a2876bd4c84d112705439287aac4e54e02.jpg",
+    "lycan": [
+        "https://ru.dotabuff.com/assets/heroes/lycan-f12b8fa2508088eea37c4ad88b94d53ea87f93c645164d079a2b1ea73e44eb74.jpg",
+        "https://ru.dotabuff.com/assets/items/rod-of-atos-c1bff51ed6f7cafef2f5763decc4640b9af5dde8bbb1d4b46e16349a05e384cf.jpg",
+        "https://ru.dotabuff.com/assets/items/arcane-boots-c513903a11257bb8f5643b743113b563d169d2dbd2939c5d2cca4c84963b693b.jpg",
+        "https://ru.dotabuff.com/assets/items/gem-of-true-sight-608edc29da6c91b70b187a2b07357138f0c3b601263b0a0ff6b2f2a8c426581b.jpg",
+        "https://ru.dotabuff.com/assets/items/shadow-blade-ba7d77cff1f5f8e93b4b8c2f0b489cff75393620c684422b13e39c569bb2562d.jpg"
+    ],
+    "oracle": [
+        "https://ru.dotabuff.com/assets/heroes/oracle-8aacd0673567081245a894c6b1dbd0e23148a9e5a6ea8bc678f5ed9ed4c2d730.jpg",
+        "https://ru.dotabuff.com/assets/items/magic-wand-291ce35effb143ba52754eb3361958a7a910188b4227aa474a1adeff9f217f05.jpg",
+        "https://ru.dotabuff.com/assets/items/quelling-blade-80f68dd7666ccf5c7b65fcc2456990f6c51c73177286cda8a4c9ce86ef865760.jpg",
+        "https://ru.dotabuff.com/assets/items/manta-style-0443a64faf59668fd66f24e863fe51f4340d3c6437ff5dfd7890f55136507a01.jpg",
+        "https://ru.dotabuff.com/assets/items/power-treads-b8799ce5df9966df861ae54f18e5b7044a0ce9fb5a0bf7778e0ae5c4b2dbccf7.jpg",
+        "https://ru.dotabuff.com/assets/items/dragon-lance-faaab3936ded26364e65b911371d2a1abdba1700ccb02be7eb8af483cac3f841.jpg",
+        "https://ru.dotabuff.com/assets/items/maelstrom-13e9eaf3a8cd4536c3a66b5d29c3b9ff38dbd7ffcdb84b69b740682710f609fc.jpg"
+    ],
+    "treant protector": [
+        "https://ru.dotabuff.com/assets/heroes/treant-protector-784fc2acb298f2c01bcc2e1918613f036b0cac15dff1f91e1bf5ac23f4f52dc6.jpg",
+        "https://ru.dotabuff.com/assets/items/blink-dagger-449f74da203ae597649ab49d4197f03854ecb88a39da13313449affac98dd8f6.jpg",
+        "https://ru.dotabuff.com/assets/items/octarine-core-845c54abca86b9b81d364c65675a0c39b40c3cc77b4c3e0376ef1b5369c572ba.jpg",
+        "https://ru.dotabuff.com/assets/items/morbid-mask-4c40dd6b36074d0336a10eb2f5938a11a0065fc066fee94da6e1475debda037c.jpg",
+        "https://ru.dotabuff.com/assets/items/power-treads-b8799ce5df9966df861ae54f18e5b7044a0ce9fb5a0bf7778e0ae5c4b2dbccf7.jpg",
+        "https://ru.dotabuff.com/assets/items/aghanims-scepter-16d3a4d0e09bcde9dadde721b0942ba97b00c060d1bca544e368f8007cba6646.jpg",
+        "https://ru.dotabuff.com/assets/items/bracer-fa9d8020277b98bede35048eb758e09017b344f7c2d0cb35291f3c38459524b5.jpg"
+    ],
+    "abaddon": [
+        "https://ru.dotabuff.com/assets/heroes/abaddon-01d9b9a7f55f569c4a81e7d5362a593a871673f91a08671ade83a0139071b47e.jpg",
         "https://ru.dotabuff.com/assets/items/arcane-boots-c513903a11257bb8f5643b743113b563d169d2dbd2939c5d2cca4c84963b693b.jpg",
         "https://ru.dotabuff.com/assets/items/rod-of-atos-c1bff51ed6f7cafef2f5763decc4640b9af5dde8bbb1d4b46e16349a05e384cf.jpg",
         "https://ru.dotabuff.com/assets/items/aghanims-scepter-16d3a4d0e09bcde9dadde721b0942ba97b00c060d1bca544e368f8007cba6646.jpg",
-        "https://ru.dotabuff.com/assets/items/ghost-scepter-010a07ff33b0016fceb7fc7e348c464ea57f22a5a11adf4ea25c049ce686bcb5.jpg",
-        "https://ru.dotabuff.com/assets/items/force-staff-4b3d277409d6ba44370d284a064f059720c0a80941fc685cd88b14ff54f6c1a9.jpg"
+        "https://ru.dotabuff.com/assets/items/dust-of-appearance-2285eb17b65ca26a084b50ac26404624b4a85c31b576aa7f047f4839c0f349da.jpg",
+        "https://ru.dotabuff.com/assets/items/magic-wand-291ce35effb143ba52754eb3361958a7a910188b4227aa474a1adeff9f217f05.jpg",
+        "https://ru.dotabuff.com/assets/items/scythe-of-vyse-7acddec6186e80029f0bc0c6aabec6d0d87969ae525ba02e6cc51911079ba62e.jpg"
     ],
-    "tiny": [
-        "https://ru.dotabuff.com/assets/heroes/tiny-dce37f06e120325c885ffa7955f9a96473d4fb24622cee2c853fa6ff5bf4352a.jpg",
-        "https://ru.dotabuff.com/assets/items/blink-dagger-449f74da203ae597649ab49d4197f03854ecb88a39da13313449affac98dd8f6.jpg",
-        "https://ru.dotabuff.com/assets/items/blade-mail-1f51a7490785400d1e9848b5890956adb717218eae81602ea410931c0af21df5.jpg",
-        "https://ru.dotabuff.com/assets/items/dagon-level-5-cc3968d1db6fab01aa23f38d316b281478783be492d836ef22e29c1a653f07b2.jpg",
-        "https://ru.dotabuff.com/assets/items/arcane-boots-c513903a11257bb8f5643b743113b563d169d2dbd2939c5d2cca4c84963b693b.jpg",
-        "https://ru.dotabuff.com/assets/items/null-talisman-8f96732319676c92aeb382899ab1584c69742f4af12e636200f4b96a9f05e7dc.jpg",
-        "https://ru.dotabuff.com/assets/items/cloak-42f2d830eed6a877dae3e132dafc252f8d271801777da8d0a072b255facd966a.jpg"
+    "sand king": [
+        "https://ru.dotabuff.com/assets/heroes/sand-king-432149fc300e872e9ef144f203997596fc7ecb8738a635c3be62d8bcb2dd2570.jpg",
+        "https://ru.dotabuff.com/assets/items/force-staff-4b3d277409d6ba44370d284a064f059720c0a80941fc685cd88b14ff54f6c1a9.jpg",
+        "https://ru.dotabuff.com/assets/items/euls-scepter-of-divinity-b217107e7451daf763a6ce437ffdebc0fde5eee3c6ff2ad8045f48bf290e5224.jpg",
+        "https://ru.dotabuff.com/assets/items/tranquil-boots-a19d702766a9bf26f8356dc58b0f4a6526555db483d382d37a3505632638b840.jpg",
+        "https://ru.dotabuff.com/assets/items/magic-wand-291ce35effb143ba52754eb3361958a7a910188b4227aa474a1adeff9f217f05.jpg",
+        "https://ru.dotabuff.com/assets/items/aghanims-scepter-16d3a4d0e09bcde9dadde721b0942ba97b00c060d1bca544e368f8007cba6646.jpg"
     ],
-    "brewmaster": [
-        "https://ru.dotabuff.com/assets/heroes/brewmaster-b5478a249b90ea0aba2a5e77eff57a332f9b783c18a4993d82fdb7c8fb5c0f50.jpg",
-        "https://ru.dotabuff.com/assets/items/heart-of-tarrasque-0d474b6da9f169851768f2a01e4e9882ba21f3cf02ae5b0c768d6488e80fe8e2.jpg",
-        "https://ru.dotabuff.com/assets/items/blade-mail-1f51a7490785400d1e9848b5890956adb717218eae81602ea410931c0af21df5.jpg",
-        "https://ru.dotabuff.com/assets/items/black-king-bar-53cc00e26c7f84c5c94883ea1af33143a437391d71e0983f97e6310684d2c0a5.jpg",
+    "morphling": [
+        "https://ru.dotabuff.com/assets/heroes/morphling-e30559b2ba8088eec6d0df67c97c1fc3823a09595e0a6bb82fd1bd4f0496623d.jpg",
+        "https://ru.dotabuff.com/assets/items/diffusal-blade-b0907160439f7a6d18218c7b12966de487fa5844635854c2577e1cb92c0c3bca.jpg",
+        "https://ru.dotabuff.com/assets/items/shadow-blade-ba7d77cff1f5f8e93b4b8c2f0b489cff75393620c684422b13e39c569bb2562d.jpg",
+        "https://ru.dotabuff.com/assets/items/linkens-sphere-b46f17668a22fb89d82fe1a7f73a1fef3fcacf47fded639dc721884a0d7eb8b4.jpg",
+        "https://ru.dotabuff.com/assets/items/mithril-hammer-e24907d1f3a2d163da88ffde268ceeb63ec07b8abe3aaa8a541d47a5e1c73fbf.jpg",
         "https://ru.dotabuff.com/assets/items/power-treads-b8799ce5df9966df861ae54f18e5b7044a0ce9fb5a0bf7778e0ae5c4b2dbccf7.jpg",
-        "https://ru.dotabuff.com/assets/items/eye-of-skadi-8ed7e0eb3584692e96fd4daf5695070e8caab6aeaf4792930e547c5f46853482.jpg",
+        "https://ru.dotabuff.com/assets/items/wraith-band-635b2c609d5a4d9331b7cace56ba8731da60162132c60ede1d7051f132f507a6.jpg"
+    ],
+    "kunkka": [
+        "https://ru.dotabuff.com/assets/heroes/kunkka-a50161afb259730dd5df27767cfd40eebb85ba61738295cafb534fc47bbe89f8.jpg",
+        "https://ru.dotabuff.com/assets/items/bracer-fa9d8020277b98bede35048eb758e09017b344f7c2d0cb35291f3c38459524b5.jpg",
+        "https://ru.dotabuff.com/assets/items/phase-boots-13f551843b66c2f065edc4a2815d4883441835133ca012e5616c231c1422d03c.jpg",
+        "https://ru.dotabuff.com/assets/items/shadow-blade-ba7d77cff1f5f8e93b4b8c2f0b489cff75393620c684422b13e39c569bb2562d.jpg",
+        "https://ru.dotabuff.com/assets/items/ogre-axe-54c2abab2bcd09b65c8fc84e692f12bbcd2e1f6e13d120e83008e1040fff830d.jpg",
+        "https://ru.dotabuff.com/assets/items/heavens-halberd-7c3b69076839a94f1b1963a8df259861fde98f4e7860330b3d6b5d59c321a7bc.jpg",
         "https://ru.dotabuff.com/assets/items/daedalus-1760bfa6ce90deefe835d82442bf474986a55c8e06dc208031e67422eb7cc7f0.jpg"
     ],
-    "centaur warrunner": [
-        "https://ru.dotabuff.com/assets/heroes/centaur-warrunner-23562ed3be99ee78f0a6f2d2e3ac4f9962d3070907bf72d44dee87b4e386d062.jpg",
-        "https://ru.dotabuff.com/assets/items/blade-mail-1f51a7490785400d1e9848b5890956adb717218eae81602ea410931c0af21df5.jpg",
-        "https://ru.dotabuff.com/assets/items/blink-dagger-449f74da203ae597649ab49d4197f03854ecb88a39da13313449affac98dd8f6.jpg",
-        "https://ru.dotabuff.com/assets/items/power-treads-b8799ce5df9966df861ae54f18e5b7044a0ce9fb5a0bf7778e0ae5c4b2dbccf7.jpg",
-        "https://ru.dotabuff.com/assets/items/gauntlets-of-strength-903b71a0967b77fb62c2c90502bcf9675978a33a87d0f3f9959c02238ad8710f.jpg",
-        "https://ru.dotabuff.com/assets/items/heart-of-tarrasque-0d474b6da9f169851768f2a01e4e9882ba21f3cf02ae5b0c768d6488e80fe8e2.jpg",
-        "https://ru.dotabuff.com/assets/items/vanguard-7037ee4a436b89ddc4421a3bb64ca494f35f3080bf790fb90ba2b45aee73569c.jpg"
-    ],
-    "undying": [
-        "https://ru.dotabuff.com/assets/heroes/undying-9d40f17d0bf46fe4dbb5652a9de3759f1a75b7eced44a0c49ee7a49361977374.jpg",
-        "https://ru.dotabuff.com/assets/items/refresher-orb-d1e1ccf11cf0063b767deaea2b3c6c7c03103dd96355ce1d9d3706dcf9cc454d.jpg",
-        "https://ru.dotabuff.com/assets/items/shivas-guard-e6ef12a2bd3a86f727c538514e9a87b53b2221d9511f15375e2de3d04c9f74e1.jpg",
-        "https://ru.dotabuff.com/assets/items/observer-and-sentry-wards-2430cb4a1535c14003492720fb03f8c91078487e312ae29ac10fb95a07252baf.jpg",
-        "https://ru.dotabuff.com/assets/items/radiance-d8059134d09f9a7a3e25c7fb01311728b709f1f8858d93c485c830727b488c5d.jpg",
+    "slark": [
+        "https://ru.dotabuff.com/assets/heroes/slark-0d9524b422375535008a7de2877a2955b83b1739d88b9734b897afabe5e9f0f2.jpg",
+        "https://ru.dotabuff.com/assets/items/arcane-boots-c513903a11257bb8f5643b743113b563d169d2dbd2939c5d2cca4c84963b693b.jpg",
+        "https://ru.dotabuff.com/assets/items/mekansm-d6635ceeb6cf422111ca1a175ca49c21591d769b7fc5bb82918435bff99f99e3.jpg",
+        "https://ru.dotabuff.com/assets/items/magic-wand-291ce35effb143ba52754eb3361958a7a910188b4227aa474a1adeff9f217f05.jpg",
+        "https://ru.dotabuff.com/assets/items/smoke-of-deceit-6423eef820b67e2e4fe3a56e4cf483ddb8f17c289f188cc6ca0ba8845910a2db.jpg",
         "https://ru.dotabuff.com/assets/items/aghanims-scepter-16d3a4d0e09bcde9dadde721b0942ba97b00c060d1bca544e368f8007cba6646.jpg",
-        "https://ru.dotabuff.com/assets/items/boots-of-travel-f8de4cb0e5f64b22527fd9b779b8a0ade80c3f079c87c2438d98668ad429e55c.jpg"
+        "https://ru.dotabuff.com/assets/items/buckler-70ced1dd23d3477093cac984dad05cda7de6888de9f64957beb3ef634f63649c.jpg"
+    ],
+    "phoenix": [
+        "https://ru.dotabuff.com/assets/heroes/phoenix-fb6b217e35b77291c7afa71781f8930481fd05ffc640b41fe3a08fc572867622.jpg",
+        "https://ru.dotabuff.com/assets/items/ghost-scepter-010a07ff33b0016fceb7fc7e348c464ea57f22a5a11adf4ea25c049ce686bcb5.jpg",
+        "https://ru.dotabuff.com/assets/items/null-talisman-8f96732319676c92aeb382899ab1584c69742f4af12e636200f4b96a9f05e7dc.jpg",
+        "https://ru.dotabuff.com/assets/items/boots-of-travel-f8de4cb0e5f64b22527fd9b779b8a0ade80c3f079c87c2438d98668ad429e55c.jpg",
+        "https://ru.dotabuff.com/assets/items/bottle-42552d5b366fc635fadf6808585f42379c407c0e5a0270f31a9e332e3ad9b55f.jpg",
+        "https://ru.dotabuff.com/assets/items/aghanims-scepter-16d3a4d0e09bcde9dadde721b0942ba97b00c060d1bca544e368f8007cba6646.jpg",
+        "https://ru.dotabuff.com/assets/items/octarine-core-845c54abca86b9b81d364c65675a0c39b40c3cc77b4c3e0376ef1b5369c572ba.jpg"
     ]
 }
