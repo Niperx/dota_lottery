@@ -5,7 +5,8 @@ import random
 import json
 
 main = 'https://ru.dotabuff.com'
-url1 = 'https://ru.dotabuff.com/matches?game_mode=single_draft&skill_bracket=normal_skill'
+# url1 = 'https://ru.dotabuff.com/matches?game_mode=single_draft&skill_bracket=normal_skill'
+url1 = 'https://ru.dotabuff.com/matches?game_mode=ability_draft'
 url = 'https://ru.dotabuff.com/matches/'
 
 def get_match_info():

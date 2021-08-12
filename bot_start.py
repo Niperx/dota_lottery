@@ -203,6 +203,7 @@ while True:
 
 					if response == 'мем' and event.user_id == 201044121:
 
+						get_match_info()
 						create_test()
 
 					if response == '!shop' and event.user_id == 201044121:
